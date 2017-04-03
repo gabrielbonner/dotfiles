@@ -1,0 +1,1 @@
+docker run --volume ~/.aws:/root/.aws -it --rm -v $PWD:$PWD -w $PWD cgswong/aws:latest aws ecr get-login
