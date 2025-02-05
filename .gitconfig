@@ -1,0 +1,35 @@
+[user]
+	name = "Gabriel Bonner"
+
+	# email = "..."
+
+[alias]
+	# short output with branch info
+	st = "status -s -b"
+
+	c = "commit"
+
+	# --all and --verbose
+	br = "branch -a -v"
+
+	co = "checkout"
+
+	# normally `git diff` only shows unstaged changes. This will show only staged (i.e. cached)
+	# changes and uses HEAD as the default <commit> value
+	dc = "diff --cached"
+
+	# show diff of staged AND unstaged changes, relative to previous commit
+	dh = "diff HEAD"
+
+	ds = "diff --staged"
+
+	# short hash, relative date and message
+	logd = "log --pretty='%C(yellow)%h %C(cyan)%ar %Creset%s'"
+
+	# show all git aliases alphabetically,
+	# first part outputs lines as 'alias.KEY VALUE' and the second part cleans it and sets it as
+	# "KEY = VALUE".
+	alias = """! git config --get-regexp ^alias\\. \
+		| sed -e s/^alias\\.// -e s/\\ /\\ =\\ / \
+		| sort \
+	"""
